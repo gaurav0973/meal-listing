@@ -1,16 +1,85 @@
-# React + Vite
+# Meals Listing Interface
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple React app that fetches meal data from the FreeAPI public endpoint and displays it as a responsive card grid. Each card shows the meal image, name, category, area, instructions, and a link to the YouTube recipe video.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Fetches meals from a remote API on page load
+- Displays meals in a responsive grid layout
+- Shows meal image, title, category, area, and instructions
+- Includes a direct link to the recipe video on YouTube
+- Uses Vite, React, Axios, and Tailwind CSS
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React 19
+- Vite
+- Axios
+- Tailwind CSS 4
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Prerequisites
+
+- Node.js installed on your machine
+- npm, pnpm, or yarn
+
+### Install Dependencies
+
+```bash
+npm install
+```
+
+### Run the Development Server
+
+```bash
+npm run dev
+```
+
+Open the local URL shown in the terminal to view the app.
+
+### Build for Production
+
+```bash
+npm run build
+```
+
+### Preview the Production Build
+
+```bash
+npm run preview
+```
+
+### Lint the Project
+
+```bash
+npm run lint
+```
+
+## API Used
+
+The app currently requests meals from:
+
+```text
+https://api.freeapi.app/api/v1/public/meals
+```
+
+The response is consumed in the app and rendered directly in the UI.
+
+## Project Structure
+
+```text
+Meals Listing Interface/
+	public/
+	services/
+		api.js
+	src/
+		App.jsx
+		index.css
+		main.jsx
+```
+
+## Notes
+
+- The page shows a loading state until meal data is fetched.
+- If the API is unavailable, the UI will not render any meals until the request succeeds.
